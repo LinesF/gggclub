@@ -1,0 +1,122 @@
+/* style.css */
+
+/* --- 기존 헤더 스타일 유지 --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #000000;
+    text-align: center;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* .container는 이 예제에서는 사용하지 않지만, 필요하다면 유지할 수 있습니다. */
+/* .container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+/* --- 고정 헤더 스타일 --- */
+header {
+    background-color: #000000;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+    /* 고정 헤더를 위한 추가 스타일 */
+    position: fixed; /* 화면 상단에 고정 */
+    width: 100%; /* 전체 너비 차지 */
+    top: 0; /* 상단에서 0px 위치 */
+    left: 0; /* 좌측에서 0px 위치 */
+    z-index: 1000; /* 다른 요소 위에 표시 (숫자가 높을수록 위로 옴) */
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* --- 드롭다운 메뉴 스타일 --- */
+.dropdown {
+    position: relative; /* 드롭다운 콘텐츠 위치 지정을 위해 필요 */
+}
+
+.dropdown-content {
+    display: none; /* 기본적으로 숨김 */
+    position: absolute; /* 부모 요소(dropdown li) 기준으로 위치 */
+    background-color: #444; /* 드롭다운 배경색 */
+    min-width: 160px; /* 최소 너비 */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1; /* 다른 콘텐츠 위에 표시 */
+    top: 100%; /* 부모 요소 바로 아래에 위치 */
+    left: 0; /* 부모 요소의 왼쪽 정렬 */
+    padding: 0; /* 기본 패딩 제거 */
+    border-top: 2px solid #ffd700; /* 상단에 강조선 */
+}
+
+.dropdown-content li {
+    margin: 0; /* 드롭다운 내부 li는 마진 제거 */
+}
+
+.dropdown-content li a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* 링크 전체 영역을 클릭 가능하게 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+.dropdown-content li a:hover {
+    background-color: #555; /* 호버 시 배경색 변경 */
+    color: #ffd700;
+}
+
+/* 마우스를 올리면 드롭다운 콘텐츠가 보이도록 */
+.dropdown:hover .dropdown-content {
+    display: block; /* 마우스 오버 시 보임 */
+}
